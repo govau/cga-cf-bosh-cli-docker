@@ -12,4 +12,9 @@ RUN chmod +x /usr/local/bin/bosh
 
 # Install sdget
 RUN export GOPATH=/tmp && export PATH=$PATH:/usr/local/go/bin && \
-    go get -v github.com/govau/sdget && mv /tmp/bin/sdget /usr/local/bin/sdget && chmod 755 /usr/local/bin/sdget
+  go get -v github.com/govau/sdget && mv /tmp/bin/sdget /usr/local/bin/sdget && chmod 755 /usr/local/bin/sdget
+
+# Install ansible
+RUN apt-get -y install software-properties-common && \
+  apt-add-repository ppa:ansible/ansible && \
+  apt-get update && apt-get -y install ansible

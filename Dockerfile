@@ -1,9 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get -y install git unzip wget
+RUN apt-get update && apt-get -y install git unzip wget jq
 
-# Install go
-# manually install go as the apt version (1.6) is too old for sdget
+# We manually install go as the apt version (1.6) is too old for sdget
 ADD scripts/go.sh /etc/profile.d/
 RUN wget -nv -O /tmp/go.tar.gz https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz && tar -xzf /tmp/go.tar.gz -C /usr/local && chmod 755 /etc/profile.d/go.sh && rm -f /tmp/go.tar.gz
 

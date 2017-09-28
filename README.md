@@ -1,6 +1,6 @@
 # Cloud Foundry BOSH CLI v2 deployed using docker [![Docker Automated build](https://img.shields.io/docker/automated/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/)
 
-Provides a docker image with the BOSH CLI v2, and other useful tools for cloud.gov.au
+Provides a docker image with the BOSH CLI v2, and other useful build tools for cloud.gov.au
 
 This repo is automatically built on [docker hub](https://hub.docker.com/r/govau/cga-cf-bosh-cli/).
 

@@ -10,6 +10,9 @@ RUN wget -nv -O /tmp/go.tar.gz https://storage.googleapis.com/golang/go1.8.3.lin
 RUN wget -nv -O /usr/local/bin/bosh "https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.40-linux-amd64"
 RUN chmod +x /usr/local/bin/bosh
 
+# Install credhub-cli
+RUN wget -nv -O /tmp/credhub.tgz https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/1.4.1/credhub-linux-1.4.1.tgz && tar xzf /tmp/credhub.tgz -C /usr/local/bin && chmod 755 /usr/local/bin/credhub && rm -f /tmp/credhub.tgz
+
 # Install sdget
 RUN export GOPATH=/tmp && export PATH=$PATH:/usr/local/go/bin && \
   go get -v github.com/govau/sdget && mv /tmp/bin/sdget /usr/local/bin/sdget && chmod 755 /usr/local/bin/sdget

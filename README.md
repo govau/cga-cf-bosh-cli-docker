@@ -1,4 +1,5 @@
-[![Docker Automated build](https://img.shields.io/docker/automated/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/) [![Docker build status](https://img.shields.io/docker/status/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/)
+[![Docker Automated build](https://img.shields.io/docker/automated/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/) 
+[![Docker Build Status](https://img.shields.io/docker/build/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/)
 
 # Cloud Foundry BOSH CLI v2 deployed using docker
 

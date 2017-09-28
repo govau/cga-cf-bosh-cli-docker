@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get -y install git unzip wget jq
+RUN apt-get update && apt-get -y install git unzip wget jq dnsutils
 
 # We manually install go as the apt version (1.6) is too old for sdget
 ADD scripts/go.sh /etc/profile.d/

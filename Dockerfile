@@ -35,4 +35,8 @@ RUN mkdir -p /go/bin && \
     bash -o pipefail -c "curl https://glide.sh/get | sh"
 
 # Install go tools
-RUN go get github.com/govau/sdget
+RUN go get \
+        github.com/GeertJohan/fgt \
+        github.com/golang/lint/golint \
+        github.com/govau/sdget \
+        golang.org/x/tools/cmd/cover

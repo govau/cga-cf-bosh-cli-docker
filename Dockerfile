@@ -41,3 +41,6 @@ RUN go get \
         github.com/golang/lint/golint \
         github.com/govau/sdget \
         golang.org/x/tools/cmd/cover
+
+# Install common NPM stuff
+RUN npm install -g yarn

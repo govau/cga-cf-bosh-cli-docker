@@ -48,3 +48,6 @@ RUN cd $(npm root -g)/npm && \
     npm install fs-extra && \
     sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js && \
     npm install -g yarn
+
+# Install terraform
+RUN bash -o pipefail -c "curl -L https://releases.hashicorp.com/terraform/0.10.7/terraform_0.10.7_linux_amd64.zip > /tmp/terraform.zip && unzip -q /tmp/terraform.zip -d /usr/local/bin && chmod 755 /usr/local/bin/terraform && rm /tmp/terraform.zip"

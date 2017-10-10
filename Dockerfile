@@ -40,6 +40,7 @@ RUN go get \
         github.com/GeertJohan/fgt \
         github.com/golang/lint/golint \
         github.com/govau/sdget \
+        github.com/jteeuwen/go-bindata/... \
         golang.org/x/tools/cmd/cover
 
 # Install common NPM stuff, and:

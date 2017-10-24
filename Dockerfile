@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 
 # Install base packages, ansible, nodejs
 RUN apt-get update && apt-get -y install \
+        awscli \
         curl \
         dnsutils \
         gcc \
@@ -9,7 +10,6 @@ RUN apt-get update && apt-get -y install \
         jq \
         software-properties-common \
         unzip \
-        awscli \
         wget && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && apt-get -y install \

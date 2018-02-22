@@ -24,10 +24,10 @@ RUN curl -L https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.48-linux-am
     chmod a+x /usr/local/bin/bosh
 
 # Install credhub-cli
-RUN bash -o pipefail -c "curl -L https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/1.5.3/credhub-linux-1.5.3.tgz | tar -xz -C /usr/local/bin"
+RUN bash -o pipefail -c "curl -L https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/1.6.0/credhub-linux-1.6.0.tgz | tar -xz -C /usr/local/bin"
 
 # Install go
-RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/golang/go1.9.3.linux-amd64.tar.gz | tar -xz -C /usr/local"
+RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/golang/go1.9.4.linux-amd64.tar.gz | tar -xz -C /usr/local"
 
 # Set Go environment variables
 ENV GOROOT=/usr/local/go GOPATH=/go PATH=/go/bin:/usr/local/go/bin:$PATH
@@ -53,6 +53,6 @@ RUN cd $(npm root -g)/npm && \
     npm install -g yarn
 
 # Install terraform
-RUN curl -L https://releases.hashicorp.com/terraform/0.10.8/terraform_0.10.8_linux_amd64.zip > /tmp/terraform.zip && \
+RUN curl -L https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip > /tmp/terraform.zip && \
     unzip /tmp/terraform.zip terraform -d /usr/local/bin && \
     rm /tmp/terraform.zip

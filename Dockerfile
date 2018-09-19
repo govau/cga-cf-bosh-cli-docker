@@ -55,7 +55,7 @@ RUN cd $(npm root -g)/npm && \
     npm install -g yarn
 
 # Install terraform
-RUN curl -L https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip > /tmp/terraform.zip && \
+RUN curl -L https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip > /tmp/terraform.zip && \
     unzip /tmp/terraform.zip terraform -d /usr/local/bin && \
     rm /tmp/terraform.zip
 

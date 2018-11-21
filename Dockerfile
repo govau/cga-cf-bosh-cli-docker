@@ -47,11 +47,9 @@ RUN go get \
         github.com/jteeuwen/go-bindata/... \
         golang.org/x/tools/cmd/cover
 
-# Install common NPM stuff, and:
-# Fix bug https://github.com/npm/npm/issues/9863
+# Install common NPM stuff:
 RUN cd $(npm root -g)/npm && \
     npm install fs-extra && \
-    sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js && \
     npm install -g yarn
 
 # Install terraform

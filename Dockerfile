@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && apt-get -y install \
         ansible && \
-    bash -o pipefail -c "curl -L https://deb.nodesource.com/setup_6.x | bash" && \
+    bash -o pipefail -c "curl -L https://deb.nodesource.com/setup_8.x | bash" && \
     apt-get -y install \
         nodejs && \
     rm -rf /var/lib/apt/lists/*

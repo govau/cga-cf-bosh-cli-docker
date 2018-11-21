@@ -62,3 +62,8 @@ RUN curl -L https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_lin
 RUN curl -L https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-linux-x86_64.zip > /tmp/protoc.zip && \
     unzip /tmp/protoc.zip -d /usr/local && \
     rm /tmp/protoc.zip
+
+# Install mevansam-cf terraform provider
+RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 && \
+    curl -L https://github.com/mevansam/terraform-provider-cf/releases/download/0.9.9/terraform-provider-cf_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
+    chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry

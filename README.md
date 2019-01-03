@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/govau/cga-cf-bosh-cli-docker.svg?style=svg)](https://circleci.com/gh/govau/cga-cf-bosh-cli-docker)
 [![Docker Automated build](https://img.shields.io/docker/automated/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/) 
 [![Docker Build Status](https://img.shields.io/docker/build/govau/cga-cf-bosh-cli.svg?style=plastic)](https://hub.docker.com/r/govau/cga-cf-bosh-cli/)
 

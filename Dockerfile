@@ -66,3 +66,7 @@ RUN curl -L https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3
 RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 && \
     curl -L https://github.com/mevansam/terraform-provider-cf/releases/download/0.9.9/terraform-provider-cf_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
     chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry
+
+# Install kubectl
+RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl > /usr/local/bin/kubectl && \
+    chmod a+x /usr/local/bin/kubectl

@@ -12,3 +12,4 @@ jobs:
      - run: docker run -it --rm govau/cga-cf-bosh-cli:$CIRCLE_BRANCH terraform --version
      - run: docker run -it --rm govau/cga-cf-bosh-cli:$CIRCLE_BRANCH bosh --version
      - run: docker run -it --rm govau/cga-cf-bosh-cli:$CIRCLE_BRANCH ansible --version
+     - run: docker run -it --rm govau/cga-cf-bosh-cli:$CIRCLE_BRANCH helm version --client

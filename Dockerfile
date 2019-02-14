@@ -68,7 +68,7 @@ RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 && \
     chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry
 
 # Install kubectl
-RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl > /usr/local/bin/kubectl && \
+RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl > /usr/local/bin/kubectl && \
     chmod a+x /usr/local/bin/kubectl
 
 # Install helm

@@ -79,6 +79,6 @@ RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-am
     mv /tmp/helm/linux-amd64/helm /tmp/helm/linux-amd64/tiller /usr/local/bin
 
 # Install svcat
-RUN curl -L https://download.svcat.sh/cli/v0.1.40/linux/amd64/svcat > /usr/local/bin/svcat && \
+RUN curl -L https://download.svcat.sh/cli/v0.1.39/linux/amd64/svcat > /usr/local/bin/svcat && \
     chmod a+x /usr/local/bin/svcat
 

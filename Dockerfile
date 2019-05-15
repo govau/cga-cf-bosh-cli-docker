@@ -82,7 +82,13 @@ RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-am
 RUN curl -L https://download.svcat.sh/cli/v0.1.39/linux/amd64/svcat > /usr/local/bin/svcat && \
     chmod a+x /usr/local/bin/svcat
 
-# Install chaostoolkit and set required locale
+# Install chaostoolkit
 RUN curl -L https://github.com/chaostoolkit/chaostoolkit-bundler/releases/download/2019.05.04/chaostoolkit-bundle_linux-amd64-2019.05.04 > /usr/local/bin/chaos && \
     chmod a+x /usr/local/bin/chaos
-ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
+
+# Install alert manager CLI
+RUN curl -L https://github.com/prometheus/alertmanager/releases/download/v0.17.0/alertmanager-0.17.0.linux-amd64.tar.gz > /tmp/alertmanager.tar.gz && \
+    mkdir /tmp/alertmanager && \
+    tar xz -C /tmp/alertmanager -f /tmp/alertmanager.tar.gz && \
+    mv /tmp/alertmanager/alertmanager-*linux-amd64/amtool /usr/local/bin/amtool && \
+    rm -rf /tmp/alertmanager /tmp/alertmanager.tar.gz

@@ -45,7 +45,8 @@ RUN go get \
     github.com/govau/le-dns-certs/cmd/route53renewer \
     github.com/govau/sdget \
     github.com/jteeuwen/go-bindata/... \
-    golang.org/x/tools/cmd/cover
+    golang.org/x/tools/cmd/cover \
+    github.com/prometheus/alertmanager/cmd/amtool
 
 # Install common NPM stuff:
 RUN cd $(npm root -g)/npm && \
@@ -85,10 +86,3 @@ RUN curl -L https://download.svcat.sh/cli/v0.1.39/linux/amd64/svcat > /usr/local
 # Install chaostoolkit
 RUN curl -L https://github.com/chaostoolkit/chaostoolkit-bundler/releases/download/2019.05.04/chaostoolkit-bundle_linux-amd64-2019.05.04 > /usr/local/bin/chaos && \
     chmod a+x /usr/local/bin/chaos
-
-# Install alert manager CLI
-RUN curl -L https://github.com/prometheus/alertmanager/releases/download/v0.17.0/alertmanager-0.17.0.linux-amd64.tar.gz > /tmp/alertmanager.tar.gz && \
-    mkdir /tmp/alertmanager && \
-    tar xz -C /tmp/alertmanager -f /tmp/alertmanager.tar.gz && \
-    mv /tmp/alertmanager/alertmanager-*linux-amd64/amtool /usr/local/bin/amtool && \
-    rm -rf /tmp/alertmanager /tmp/alertmanager.tar.gz

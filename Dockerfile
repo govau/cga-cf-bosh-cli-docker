@@ -63,9 +63,9 @@ RUN curl -L https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3
     unzip /tmp/protoc.zip -d /usr/local && \
     rm /tmp/protoc.zip
 
-# Install mevansam-cf terraform provider
+# Install cloudfoundry terraform provider
 RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 && \
-    curl -L https://github.com/mevansam/terraform-provider-cf/releases/download/0.9.9/terraform-provider-cf_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
+    curl -L https://github.com/cloudfoundry-community/terraform-provider-cf/releases/download/v0.11.0/terraform-provider-cloudfoundry_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
     chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry
 
 # Install kubectl

@@ -9,6 +9,7 @@ RUN apt-get update && apt-get -y install \
     git \
     jq \
     software-properties-common \
+    zip \
     unzip \
     wget && \
     apt-add-repository ppa:ansible/ansible && \

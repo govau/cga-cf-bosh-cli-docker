@@ -11,7 +11,8 @@ RUN apt-get update && apt-get -y install \
     software-properties-common \
     zip \
     unzip \
-    wget && \
+    wget \
+    python-boto3 && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && apt-get -y install \
     ansible && \

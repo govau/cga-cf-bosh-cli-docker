@@ -29,7 +29,7 @@ RUN curl -L https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.48-linux-am
 RUN bash -o pipefail -c "curl -L https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/1.7.5/credhub-linux-1.7.5.tgz | tar -xz -C /usr/local/bin"
 
 # Install go
-RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/golang/go1.10.2.linux-amd64.tar.gz | tar -xz -C /usr/local"
+RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/golang/go1.14.15.linux-amd64.tar.gz | tar -xz -C /usr/local"
 
 # Set Go environment variables
 ENV GOROOT=/usr/local/go GOPATH=/go PATH=/go/bin:/usr/local/go/bin:$PATH
@@ -42,12 +42,13 @@ RUN mkdir -p /go/bin && \
 RUN go get \
     github.com/golang/dep/cmd/dep \
     github.com/GeertJohan/fgt \
-    github.com/golang/lint/golint \
+    golang.org/x/lint/golint \
     github.com/golang/protobuf/protoc-gen-go \
     github.com/govau/le-dns-certs/cmd/route53renewer \
     github.com/govau/sdget \
     github.com/jteeuwen/go-bindata/... \
     golang.org/x/tools/cmd/cover \
+    github.com/cespare/xxhash \
     github.com/prometheus/alertmanager/cmd/amtool
 
 # Install common NPM stuff:

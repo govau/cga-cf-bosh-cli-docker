@@ -36,7 +36,7 @@ ENV GOROOT=/usr/local/go GOPATH=/go PATH=/go/bin:/usr/local/go/bin:$PATH
 
 # Install glide
 RUN mkdir -p /go/bin && \
-    bash -o pipefail -c "curl -L https://raw.github.com/Masterminds/glide.sh/master/get | sh"
+    bash -o pipefail -c "curl -L https://github.com/Masterminds/glide/releases/download/v0.13.3/glide-v0.13.3-linux-amd64.tar.gz | tar -xz -C /go/bin"
 
 # Install go tools
 RUN go get \

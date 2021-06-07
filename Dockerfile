@@ -56,7 +56,7 @@ RUN cd $(npm root -g)/npm && \
     npm install -g yarn
 
 # Install terraform
-ENV TERRAFORM_VERSION "0.12.12"
+ENV TERRAFORM_VERSION "0.12.30"
 RUN curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > /tmp/terraform.zip && \
     unzip /tmp/terraform.zip terraform -d /usr/local/bin && \
     rm /tmp/terraform.zip
@@ -66,8 +66,9 @@ RUN curl -L https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3
     rm /tmp/protoc.zip
 
 # Install cloudfoundry terraform provider
+ENV CLOUDFOUNDRY_VERSION "0.14.2"
 RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 && \
-    curl -L https://github.com/cloudfoundry-community/terraform-provider-cf/releases/download/v0.11.0/terraform-provider-cloudfoundry_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
+    curl -L https://github.com/cloudfoundry-community/terraform-provider-cf/releases/download/v${CLOUDFOUNDRY_VERSION}/terraform-provider-cloudfoundry_linux_amd64 > /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry && \
     chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry
 
 # Install kubectl

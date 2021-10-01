@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 
+# 18.04 needs this
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+
 # Install base packages, ansible, nodejs
 RUN apt-get update && apt-get -y install \
     awscli \

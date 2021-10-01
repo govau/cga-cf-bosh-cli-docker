@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Install base packages, ansible, nodejs
 RUN apt-get update && apt-get -y install \
@@ -26,7 +26,7 @@ RUN curl -L https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.48-linux-am
     chmod a+x /usr/local/bin/bosh
 
 # Install credhub-cli
-RUN bash -o pipefail -c "curl -L https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/1.7.5/credhub-linux-1.7.5.tgz | tar -xz -C /usr/local/bin"
+RUN bash -o pipefail -c "curl -L https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/2.9.0/credhub-linux-2.9.0.tgz | tar -xz -C /usr/local/bin"
 
 # Install go
 RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/golang/go1.14.15.linux-amd64.tar.gz | tar -xz -C /usr/local"

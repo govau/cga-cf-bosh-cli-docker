@@ -1,10 +1,7 @@
 FROM ubuntu:18.04
 
-# 18.04 needs this
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-
 # Install base packages, ansible, nodejs
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y install \
     awscli \
     curl \
     dnsutils \
@@ -85,7 +82,7 @@ RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bi
 
 # Install helm
 # RUN bash -o pipefail -c "curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-amd64.tar.gz | tar -xz -C /usr/local/bin"
-RUN curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-amd64.tar.gz > /tmp/helm.tar.gz && \
+RUN curl -L https://get.helm.sh/helm-v2.12.2-linux-amd64.tar.gz > /tmp/helm.tar.gz && \
     mkdir /tmp/helm && \
     tar -xz -C /tmp/helm -f /tmp/helm.tar.gz && \
     mv /tmp/helm/linux-amd64/helm /tmp/helm/linux-amd64/tiller /usr/local/bin
